@@ -26,6 +26,7 @@ namespace EntityFrameworkBenchmarks
 
             services.AddSingleton(typeof(DapperDbContext));
             services.AddSingleton(typeof(ManualDbContext));
+            services.AddSingleton(typeof(MemoryDbContext));
 
             services.AddMvc();
             // Uncomment the following line to add Web API services which makes it easier to port Web API 2 controllers.
