@@ -3,6 +3,7 @@ using Microsoft.AspNet.Mvc;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.Data.Entity;
 
 namespace EntityFrameworkBenchmarks.Controllers
 {

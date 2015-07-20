@@ -16,12 +16,16 @@ namespace EntityFrameworkBenchmarks.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<SysObject>().ForRelational().Table(tableName: "objects", schemaName: "sys");
+            // Not sure what/why but the ForRelational() only exists in beta4
+            // version of EntityFramework.Relational and when trying to use it
+            // with beta5 EntityFramework the whole thing goes BOOM. 
+            // Life's too short to figure this out, so ditching ForRelational in favour of ForSqlServer.
+            modelBuilder.Entity<SysObject>().ForSqlServer().Table(tableName: "objects", schemaName: "sys");
             modelBuilder.Entity<SysObject>().Key(o => o.ObjectId);
-            modelBuilder.Entity<SysObject>().Property(o => o.Name).ForRelational().Column("name");
-            modelBuilder.Entity<SysObject>().Property(o => o.ObjectId).ForRelational().Column("object_id");
-            modelBuilder.Entity<SysObject>().Property(o => o.Type).ForRelational().Column("type");
-            modelBuilder.Entity<SysObject>().Property(o => o.TypeDescription).ForRelational().Column("type_desc");
+            modelBuilder.Entity<SysObject>().Property(o => o.Name).ForSqlServer().Column("name");
+            modelBuilder.Entity<SysObject>().Property(o => o.ObjectId).ForSqlServer().Column("object_id");
+            modelBuilder.Entity<SysObject>().Property(o => o.Type).ForSqlServer().Column("type");
+            modelBuilder.Entity<SysObject>().Property(o => o.TypeDescription).ForSqlServer().Column("type_desc");
 
             base.OnModelCreating(modelBuilder);
         }

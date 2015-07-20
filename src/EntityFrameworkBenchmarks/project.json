@@ -3,19 +3,18 @@
   "version": "1.0.0-*",
 
   "dependencies": {
-    "Microsoft.AspNet.Mvc": "6.0.0-beta4",
-    "Microsoft.AspNet.Server.IIS": "1.0.0-beta4",
-    "Microsoft.AspNet.Server.WebListener": "1.0.0-beta4",
-    "Microsoft.AspNet.StaticFiles": "1.0.0-beta4",
-    "Microsoft.AspNet.Diagnostics": "1.0.0-beta4",
-    "EntityFramework.SqlServer": "7.0.0-beta4",
-    "System.Data.SqlClient": "4.0.0-beta-22913",
+    "Microsoft.AspNet.Mvc": "6.0.0-beta5",
+    "Microsoft.AspNet.Server.IIS": "1.0.0-beta5",
+    "Microsoft.AspNet.Server.WebListener": "1.0.0-beta5",
+    "Microsoft.AspNet.StaticFiles": "1.0.0-beta5",
+    "Microsoft.AspNet.Diagnostics": "1.0.0-beta5",
+    "EntityFramework.SqlServer": "7.0.0-beta5",
     "Dapper": "1.41.0-beta5"
 
   },
 
   "commands": {
-    "web": "Microsoft.AspNet.Hosting --server Microsoft.AspNet.Server.WebListener --server.urls http://localhost:5000"
+    "web": "Microsoft.AspNet.Hosting --config hosting.ini"
   },
 
   "frameworks": {
