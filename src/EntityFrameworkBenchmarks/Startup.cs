@@ -37,7 +37,7 @@ namespace EntityFrameworkBenchmarks
         // Configure is called after ConfigureServices is called.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            app.UseErrorPage(ErrorPageOptions.ShowAll);
+            //app.UseErrorPage();
 
             // Add MVC to the request pipeline.
             app.UseMvc();

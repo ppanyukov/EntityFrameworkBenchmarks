@@ -20,12 +20,12 @@ namespace EntityFrameworkBenchmarks.Data
             // version of EntityFramework.Relational and when trying to use it
             // with beta5 EntityFramework the whole thing goes BOOM. 
             // Life's too short to figure this out, so ditching ForRelational in favour of ForSqlServer.
-            modelBuilder.Entity<SysObject>().ForSqlServer().Table(tableName: "objects", schemaName: "sys");
+            modelBuilder.Entity<SysObject>().ToTable(name: "objects", schema: "sys");
             modelBuilder.Entity<SysObject>().Key(o => o.ObjectId);
-            modelBuilder.Entity<SysObject>().Property(o => o.Name).ForSqlServer().Column("name");
-            modelBuilder.Entity<SysObject>().Property(o => o.ObjectId).ForSqlServer().Column("object_id");
-            modelBuilder.Entity<SysObject>().Property(o => o.Type).ForSqlServer().Column("type");
-            modelBuilder.Entity<SysObject>().Property(o => o.TypeDescription).ForSqlServer().Column("type_desc");
+            modelBuilder.Entity<SysObject>().Property(o => o.Name).HasColumnName("name");
+            modelBuilder.Entity<SysObject>().Property(o => o.ObjectId).HasColumnName("object_id");
+            modelBuilder.Entity<SysObject>().Property(o => o.Type).HasColumnName("type");
+            modelBuilder.Entity<SysObject>().Property(o => o.TypeDescription).HasColumnName("type_desc");
 
             base.OnModelCreating(modelBuilder);
         }
